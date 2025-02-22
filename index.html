@@ -31,6 +31,13 @@
         .project:hover {
             transform: scale(1.05);
         }
+        .project img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            display: block;
+            margin: 0 auto;
+        }
         .slider {
             position: relative;
             width: 100%;
@@ -45,6 +52,7 @@
         }
         .slides img {
             width: 100%;
+            height: auto;
             border-radius: 10px;
         }
         .prev, .next {
@@ -83,53 +91,10 @@
             <h2>IntelliPrints</h2>
             <p>Проект IntelliPrints — это умный генератор изображений на основе искусственного интеллекта.</p>
             <img src="https://i.postimg.cc/656Hnqnv/image.png" alt="Изображение">
-            <ul>
-                <li><strong>Технологии:</strong> HTML, CSS, JavaScript, AI</li>
-                <li><strong>Репозиторий:</strong> <a href="https://github.com/vinvyach/IntelliPrints" target="_blank">GitHub</a></li>
-                <li><strong>Демо:</strong> <a href="https://vinvyach.github.io/IntelliPrints/" target="_blank">Просмотреть</a></li>
-            </ul>
         </section>
-
-        <section class="project">
-            <h2>QA и Тестирование</h2>
-            <p>Раздел посвящен проектам в области тестирования и обеспечения качества.</p>
-
-            <img src="https://i.postimg.cc/ZBW4kFR5/qa-testing.jpg" alt="Изображение QA">
-            <ul>
-                <li><strong>Проект 1:</strong> Автоматизированное тестирование веб-приложений (Selenium, Python).</li>
-                <li><strong>Проект 2:</strong> Нагрузочное тестирование API (JMeter, Postman).</li>
-                <li><strong>Проект 3:</strong> Ручное тестирование мобильных приложений (Android, iOS).</li>
-                <li><strong>Проект 4:</strong> Тестирование и автотестирование сайтов <a href="https://itusluga.ru/" target="_blank">itusluga.ru</a> и <a href="https://05.ru/" target="_blank">05.ru</a>.</li>
-            </ul>
-            <p><strong>Технологии:</strong> Selenium, JMeter, Postman, Appium, Python, Java.</p>
-        </section>
-
-
-        <section class="project">
-            <h2>Сайты-визитки</h2>
-            <p>Раздел посвящен проектам в области html+css сайтов-визиток, как правило одностраничных</p>
-
-            <img src="https://github.com/vinvyach/meportfolio/blob/main/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202025-02-22%20210329.png?raw=true" alt="Изображение">
-            <ul>
-                <li><strong>Проект 1:</strong> Сайт компании ТОО Techno Exp Almaty</li>
-            </ul>
-            <p><strong>Технологии:</strong> HTML / CSS / etc...</p>
-        </section>
-        
     </main>
     <footer>
         <p>© 2025 Все права защищены.</p>
     </footer>
-    <script>
-        let currentIndex = 0;
-        function moveSlide(direction) {
-            const slides = document.querySelector('.slides');
-            const images = document.querySelectorAll('.slides img');
-            currentIndex += direction;
-            if (currentIndex >= images.length) currentIndex = 0;
-            if (currentIndex < 0) currentIndex = images.length - 1;
-            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-        }
-    </script>
 </body>
 </html>
