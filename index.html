@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио | IntelliPrints</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: white;
+            text-align: center;
+        }
+        header {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .project {
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+        .project:hover {
+            transform: scale(1.05);
+        }
+        .slider {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slides img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .prev { left: 10px; }
+        .next { right: 10px; }
+        a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Портфолио</h1>
+        <p>Проекты и разработки</p>
+    </header>
+    <main>
+        <section class="project">
+            <h2>IntelliPrints</h2>
+            <p>Проект IntelliPrints — это умный генератор изображений на основе искусственного интеллекта.</p>
+            <div class="slider">
+                <div class="slides">
+                    <img src="https://via.placeholder.com/600x400?text=Technology" alt="Изображение о технологиях">
+                    <img src="https://via.placeholder.com/600x400?text=AI" alt="Изображение об ИИ">
+                    <img src="https://via.placeholder.com/600x400?text=Coding" alt="Изображение о программировании">
+                </div>
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+            <ul>
+                <li><strong>Технологии:</strong> HTML, CSS, JavaScript, AI</li>
+                <li><strong>Репозиторий:</strong> <a href="https://github.com/vinvyach/IntelliPrints" target="_blank">GitHub</a></li>
+                <li><strong>Демо:</strong> <a href="https://vinvyach.github.io/IntelliPrints/" target="_blank">Просмотреть</a></li>
+            </ul>
+        </section>
+
+        <section class="project">
+            <h2>QA и Тестирование</h2>
+            <p>Раздел посвящен проектам в области тестирования и обеспечения качества.</p>
+
+            <img src="https://i.postimg.cc/ZBW4kFR5/qa-testing.jpg" alt="Изображение QA">
+            <ul>
+                <li><strong>Проект 1:</strong> Автоматизированное тестирование веб-приложений (Selenium, Python).</li>
+                <li><strong>Проект 2:</strong> Нагрузочное тестирование API (JMeter, Postman).</li>
+                <li><strong>Проект 3:</strong> Ручное тестирование мобильных приложений (Android, iOS).</li>
+                <li><strong>Проект 4:</strong> Тестирование и автотестирование сайтов <a href="https://itusluga.ru/" target="_blank">itusluga.ru</a> и <a href="https://05.ru/" target="_blank">05.ru</a>.</li>
+            </ul>
+            <p><strong>Технологии:</strong> Selenium, JMeter, Postman, Appium, Python, Java.</p>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Все права защищены.</p>
+    </footer>
+    <script>
+        let currentIndex = 0;
+        function moveSlide(direction) {
+            const slides = document.querySelector('.slides');
+            const images = document.querySelectorAll('.slides img');
+            currentIndex += direction;
+            if (currentIndex >= images.length) currentIndex = 0;
+            if (currentIndex < 0) currentIndex = images.length - 1;
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+    </script>
+</body>
+</html>
